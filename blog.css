@@ -1,0 +1,171 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* Hero Banner */
+.hero-banner {
+    background: red; /* Solid red background */
+    height: 320px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif; /* Professional, modern font */
+    animation: bannerAnimation 1.5s ease-out; /* Banner animation */
+}
+
+.hero-banner::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.45); /* Dark overlay for contrast */
+    z-index: 0;
+}
+
+.hero-text {
+    z-index: 1;
+    opacity: 0;
+    animation: fadeIn 2s ease-out forwards; /* Fade-in effect for text */
+}
+
+.hero-text h1 {
+    font-size: 3rem; /* Increased font size for emphasis */
+    font-weight: 700;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Subtle shadow for a more professional feel */
+}
+
+.hero-text p {
+    font-size: 1.4rem;
+    margin-top: 10px;
+    letter-spacing: 0.5px; /* Added some spacing for a cleaner look */
+}
+
+/* Hero Banner Animations */
+@keyframes bannerAnimation {
+    0% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Layout */
+.container {
+    display: flex;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    gap: 2rem;
+}
+
+/* Articles */
+.article-grid {
+    flex: 3;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.article {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: articleAnimation 0.8s ease-out forwards; /* Article fade-in effect */
+}
+
+.article:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+}
+
+.article img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.article h2 {
+    font-size: 1.25rem;
+    padding: 1rem 1rem 0 1rem;
+}
+
+.article em {
+    display: block;
+    padding: 0 1rem;
+    color: #777;
+    font-size: 0.9rem;
+}
+
+.article p {
+    padding: 0 1rem 1rem;
+    font-size: 0.95rem;
+}
+
+/* Article Animation */
+@keyframes articleAnimation {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Button Styles */
+.btn {
+    display: block;
+    margin: 0 1rem 1rem;
+    background: #ff3b58;
+    color: white;
+    text-align: center;
+    padding: 0.5rem;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #e32b47; 
+    transform: scale(1.05); /* Slightly enlarge the button */
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    background: #222;
+    color: #aaa;
+    font-size: 0.9rem;
+}
