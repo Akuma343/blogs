@@ -66,6 +66,7 @@ body {
 
 .main-article {
   flex: 3;
+  min-width: 0;
 }
 
 .main-article h2 {
@@ -106,7 +107,7 @@ body {
 
 .engagement i {
   margin-right: 6px;
-  color: #e52d27;  /* Icon color */
+  color: #e52d27;
 }
 
 /* Comment Section */
@@ -244,7 +245,7 @@ footer a:hover {
   to { opacity: 1; }
 }
 
-/* Responsive */
+/* Responsive Styles */
 @media (max-width: 1024px) {
   .container {
     flex-direction: column;
@@ -260,17 +261,17 @@ footer a:hover {
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .hero-text h1 {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
   }
 
   .hero-text p {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 
   .main-article h2 {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   .main-article p {
@@ -281,15 +282,46 @@ footer a:hover {
     flex: 1 1 100%;
   }
 }
-.engagement {
-  font-size: 0.75rem; 
-  margin-bottom: 1rem; 
-}
 
-.engagement span {
-  font-size: 0.65rem; 
-}
+@media (max-width: 480px) {
+  .hero-banner {
+    height: 240px;
+    padding: 0 1rem;
+  }
 
-.engagement i {
-  font-size: 0.65rem; 
+  .hero-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-text p {
+    font-size: 0.95rem;
+  }
+
+  .main-article h2 {
+    font-size: 1.6rem;
+  }
+
+  .main-article p {
+    font-size: 0.95rem;
+  }
+
+  .engagement {
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .engagement span,
+  .engagement i {
+    font-size: 0.7rem;
+  }
+
+  .comment-section input,
+  .comment-section textarea,
+  .comment-section button {
+    font-size: 0.95rem;
+  }
+
+  .sidebar {
+    flex-direction: column;
+  }
 }
